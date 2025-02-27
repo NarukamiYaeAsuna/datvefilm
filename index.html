@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng Đặt Vé Xem Phim</title>
+    
+    
+    
+</head>
+<style>
+  body {
+    background-image: url('https://as2.ftcdn.net/v2/jpg/04/25/01/21/1000_F_425012179_HQA4FIoxsGQbU47cPBt5gW25qy8YKCoS.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+header{
+    width: 100%;
+    height: 100px;
+    z-index: 1001;
+    color: rgba(251, 46, 0, 0.922);
+    font-size: 30px;
+    
+}
+.than{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.danhsachfilm{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    
+
+}
+.film1 {
+    width: 170px;
+    height: 250px;
+    cursor: pointer;
+    background-image: url('https://play-lh.googleusercontent.com/VMPS_t-CGBp-NVqefuMvMOGEDfmovBcGiepmAAF1I9hkdjLOjsfVjEV5d41DTAy3qI_akNaJKTdmaNwMRIs');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    border: 2px solid black; 
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Thêm hiệu ứng mượt */
+}
+
+.film2 {
+    width: 170px;
+    height: 250px;
+    cursor: pointer;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaBAmV5dJqgmErmH18t4qLPsjpkqv65jYcyg&s');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    border: 2px solid black; 
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Thêm hiệu ứng mượt */
+}
+.film3 {
+    width: 170px;
+    height: 250px;
+    cursor: pointer;
+    background-image: url('https://simg.zalopay.com.vn/zlp-website/assets/phim_tham_hoa_9_1f1cbd7de1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    border: 2px solid black; 
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Thêm hiệu ứng mượt */
+}
+.film4 {
+    width: 170px;
+    height: 250px;
+    cursor: pointer;
+    background-image: url('https://cdn.mobilecity.vn/mobilecity-vn/images/2023/09/top-20-phim-le-my-hay-nhat-2023-3.jpg.webp');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    border: 2px solid black; 
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Thêm hiệu ứng mượt */
+}
+.film5 {
+    width: 170px;
+    height: 250px;
+    cursor: pointer;
+    background-image: url('https://cdn.mobilecity.vn/mobilecity-vn/images/2023/09/top-20-phim-le-my-hay-nhat-2023-5.jpg.webp');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    border: 2px solid black; 
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Thêm hiệu ứng mượt */
+}
+.film6 {
+    width: 170px;
+    height: 250px;
+    cursor: pointer;
+    background-image: url('https://bazaarvietnam.vn/wp-content/uploads/2024/06/harper-bazaar-nhung-bo-phim-hanh-dong-hay-nhat-3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center; 
+    border: 2px solid black; 
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Thêm hiệu ứng mượt */
+}
+.film1:hover {
+    transform: scale(1.05); /* Phóng to 10% */
+}
+.film2:hover {
+    transform: scale(1.05); /* Phóng to 10% */
+}
+.film3:hover {
+    transform: scale(1.05); /* Phóng to 10% */
+}
+.film4:hover {
+    transform: scale(1.05); /* Phóng to 10% */
+}
+.film5:hover {
+    transform: scale(1.05); /* Phóng to 10% */
+}
+.film6:hover {
+    transform: scale(1.05); /* Phóng to 10% */
+}
+.benphai{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.dangnhap{
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(185, 33, 33);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}
+.dangnhap h1{
+    font-size: 20px;
+   
+}
+.dangki{
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+.dangki h1{
+    font-size: 20px;
+   
+}
+
+
+
+</style>
+<body>
+    <header>
+        <h1>NETFLEX</h1>
+    </header>
+    <div class="than">
+        <div class="danhsachfilm">
+            <div class="film1"></div>
+            <div class="film2"></div>
+            <div class="film3"></div>
+            <div class="film4"></div>
+            <div class="film5"></div>
+            <div class="film6"></div>
+            <div class="film7"></div>
+
+        </div>
+        <div class="benphai">
+            <div class="img1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnAdiOFlLxTLfnujQZK16EF1n6QIkSMtyrAMqk5r1MHiMMoH3oZY9_t8PLvsSue2ncqKc&usqp=CAU" style="border-radius: 50px;width: 100px;height: 100px;">
+            </div>
+            <div class="dangnhap" onclick="window.location.href='dangnhap.html'">
+                <h1>
+                    Đăng Nhập
+                </h1>
+            </div>
+            <div class="dangki" onclick="window.location.href='dangki.html'">
+                <h1>Đăng Kí</h1>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
