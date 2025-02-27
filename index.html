@@ -22,8 +22,11 @@ header{
     z-index: 1001;
     color: rgba(251, 46, 0, 0.922);
     font-size: 30px;
-    
+    display: flex;
+    align-items: center;
 }
+
+
 .than{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -161,23 +164,99 @@ header{
     font-size: 20px;
    
 }
+.timkiem{
+    width: 200px;
+    height: 40px;
+    margin-left: 100px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(152, 152, 152);
+    border-radius: 10px;
+}
+.timkiem h1{
+    font-size: 15px;
+}
+.box {
+            display: none;
+            width: 350px;
+            background-color: white;
+            color: black;
+            text-align: left;
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
 
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+        }
 
+        .close-btn:hover {
+            color: red;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: darkgreen;
+        }
 
 </style>
 <body>
     <header>
-        <h1>NETFLEX</h1>
+        <h2>NETFLEX</h2>
+        <div class="timkiem">
+            <h1>Tìm kiếm</h1> 
+        </div>
     </header>
     <div class="than">
         <div class="danhsachfilm">
-            <div class="film1"></div>
-            <div class="film2"></div>
-            <div class="film3"></div>
-            <div class="film4"></div>
-            <div class="film5"></div>
-            <div class="film6"></div>
-            <div class="film7"></div>
+            <div class="film1" onclick="toggleBox()"></div>
+            <div class="film2" onclick="toggleBox()"></div>
+            <div class="film3" onclick="toggleBox()"></div>
+            <div class="film4" onclick="toggleBox()"></div>
+            <div class="film5" onclick="toggleBox()"></div>
+            <div class="film6" onclick="toggleBox()"></div>
+            <div class="film7" onclick="toggleBox()"></div>
+
 
         </div>
         <div class="benphai">
@@ -196,6 +275,51 @@ header{
         </div>
 
     </div>
+    <div id="box" class="box">
+        <span class="close-btn" onclick="closeBox()">X</span>
+        <h1>Đặt vé xem phim</h1>
+
+       
+        <label for="date">Chọn ngày:</label>
+        <input type="date" id="date">
+
+        <label for="time">Chọn suất chiếu:</label>
+        <select id="time">
+            <option value="10:00">10:00</option>
+            <option value="13:00">13:00</option>
+            <option value="16:00">16:00</option>
+            <option value="19:00">19:00</option>
+        </select>
+
+        <label for="seats">Số lượng vé:</label>
+        <input type="number" id="seats" min="1" value="1">
+
+        <button class="submit-btn" onclick="bookTicket()">Đặt vé</button>
+    </div>
 
 </body>
+<script>
+    function toggleBox() {
+        document.getElementById("box").style.display = "block";
+    }
+
+    function closeBox() {
+        document.getElementById("box").style.display = "none";
+    }
+
+    function bookTicket() {
+        var movie = document.getElementById("movie").value;
+        var date = document.getElementById("date").value;
+        var time = document.getElementById("time").value;
+        var seats = document.getElementById("seats").value;
+
+        if (date === "" || seats <= 0) {
+            alert("Vui lòng chọn ngày và số lượng vé hợp lệ!");
+            return;
+        }
+
+        alert(`Bạn đã đặt vé thành công!\nPhim: ${movie}\nNgày: ${date}\nSuất chiếu: ${time}\nSố vé: ${seats}`);
+        closeBox();
+    }
+</script>
 </html>
