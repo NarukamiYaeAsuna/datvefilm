@@ -27,15 +27,28 @@ header{
 }
 
 
-.than{
+.than {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr); /* Mặc định: 2 cột */
+    gap: 10px; /* Tùy chọn: khoảng cách giữa các ô */
 }
+
+@media screen and (max-width: 400px) {
+    .than {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột trên màn hình nhỏ */
+    }
+}
+
 .danhsachfilm{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     
 
+}
+@media screen and (max-width: 400px) {
+     .danhsachfilm{
+        grid-template-columns: repeat(2,1fr);
+     }
 }
 .film1 {
     width: 170px;
@@ -238,6 +251,12 @@ header{
         .submit-btn:hover {
             background-color: darkgreen;
         }
+        .boxx{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
 </style>
 <body>
@@ -248,18 +267,8 @@ header{
         </div>
     </header>
     <div class="than">
-        <div class="danhsachfilm">
-            <div class="film1" onclick="toggleBox()"></div>
-            <div class="film2" onclick="toggleBox()"></div>
-            <div class="film3" onclick="toggleBox()"></div>
-            <div class="film4" onclick="toggleBox()"></div>
-            <div class="film5" onclick="toggleBox()"></div>
-            <div class="film6" onclick="toggleBox()"></div>
-            <div class="film7" onclick="toggleBox()"></div>
-
-
-        </div>
         <div class="benphai">
+            <div class="boxx">
             <div class="img1">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnAdiOFlLxTLfnujQZK16EF1n6QIkSMtyrAMqk5r1MHiMMoH3oZY9_t8PLvsSue2ncqKc&usqp=CAU" style="border-radius: 50px;width: 100px;height: 100px;">
             </div>
@@ -271,8 +280,20 @@ header{
             <div class="dangki" onclick="window.location.href='dangki.html'">
                 <h1>Đăng Kí</h1>
             </div>
+            </div>
+        </div>
+        <div class="danhsachfilm">
+            <div class="film1" onclick="toggleBox()"></div>
+            <div class="film2" onclick="toggleBox()"></div>
+            <div class="film3" onclick="toggleBox()"></div>
+            <div class="film4" onclick="toggleBox()"></div>
+            <div class="film5" onclick="toggleBox()"></div>
+            <div class="film6" onclick="toggleBox()"></div>
+            <div class="film7" onclick="toggleBox()"></div>
+
 
         </div>
+        
 
     </div>
     <div id="box" class="box">
@@ -293,6 +314,7 @@ header{
 
         <label for="seats">Số lượng vé:</label>
         <input type="number" id="seats" min="1" value="1">
+        <label>Chọn địa điểm</label>
 
         <button class="submit-btn" onclick="bookTicket()">Đặt vé</button>
     </div>
